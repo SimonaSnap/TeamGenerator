@@ -5,7 +5,22 @@ class Intern extends Employee
     constructor(name, id, email, school)
     {
         super(name, id, email)
-        this.school = school;
+        if (typeof name !== "string" && typeof id !== "number" && typeof email !== "string" && typeof school !== "string")
+        {
+        }
+        else
+        {
+            if (typeof name == "string" && typeof id == "number" && typeof email == "string" && typeof school == 'string')
+            {
+                this.school = school;
+            }
+            else
+            {
+                throw new Error(
+                    "Expected parameter 'school' to be a non empty string"
+                );
+            }
+        }
     }
 
     getSchool()

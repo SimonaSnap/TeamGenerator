@@ -22,4 +22,16 @@ describe("Manager", () =>
             expect(manager.getRole()).toEqual(role)
         })
     })
+    describe("Parameter check", () =>
+    {
+        it("should throw an error if no parameters are given", () =>
+        {
+            const cb = () => new Manager();
+            const err = new Error(
+                "Expected parameter parameters should not be empty"
+            );
+
+            expect(cb).toThrowError(err);
+        })
+    })
 })

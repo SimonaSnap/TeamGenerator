@@ -5,7 +5,7 @@ class Employee
         if (typeof name !== "string" && typeof id !== "number" && typeof email !== "string")
         {
             throw new Error(
-                "Expected parameter 'name, id, and email' should not be empty"
+                "Expected parameter parameters should not be empty"
             );
         }
         else

@@ -29,7 +29,7 @@ describe("Employee", () =>
         {
             const cb = () => new Employee();
             const err = new Error(
-                "Expected parameter 'name, id, and email' should not be empty"
+                "Expected parameter parameters should not be empty"
             );
 
             expect(cb).toThrowError(err);

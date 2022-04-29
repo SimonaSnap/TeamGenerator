@@ -5,7 +5,23 @@ class Engineer extends Employee
     constructor(name, id, email, gitHub)
     {
         super(name, id, email)
-        this.gitHub = gitHub;
+
+        if (typeof name !== "string" && typeof id !== "number" && typeof email !== "string" && typeof gitHub !== "string")
+        {
+        }
+        else
+        {
+            if (typeof name == "string" && typeof id == "number" && typeof email == "string" && typeof gitHub == 'string')
+            {
+                this.gitHub = gitHub;
+            }
+            else
+            {
+                throw new Error(
+                    "Expected parameter 'gitHub' to be a non empty string"
+                );
+            }
+        }
     }
 
     getGitHub()

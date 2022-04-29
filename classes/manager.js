@@ -5,7 +5,22 @@ class Manager extends Employee
     constructor(name, id, email, officeNum)
     {
         super(name, id, email)
-        this.officeNum = officeNum;
+        if (typeof name !== "string" && typeof id !== "number" && typeof email !== "string" && typeof officeNum !== "string")
+        {
+        }
+        else
+        {
+            if (typeof name == "string" && typeof id == "number" && typeof email == "string" && typeof officeNum == 'string')
+            {
+                this.officeNum = officeNum;
+            }
+            else
+            {
+                throw new Error(
+                    "Expected parameter 'officeNum' to be a non empty string"
+                );
+            }
+        }
     }
 
     getOfficeNum()
