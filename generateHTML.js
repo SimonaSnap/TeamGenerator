@@ -2,66 +2,33 @@ const Manager = require("./classes/manager");
 
 function generateCard(team)
 {
+    const arr = []
     //console.log(team);
     team.forEach((object) =>
     {
         if (object.getRole() == "Manager")
         {
-            manName = object.name;
-            id = object.id;
-            email = object.id;
-            role = object.getRole();
-            officeNum = object.officeNum;
-
-            return `<div class="col-sm-4">
-                <div class="card p-3">
-                    <div class="card-body">
-                        <h5 class="card-title">${manName}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">${role}</h6>
-                        <a href="#" class="card-link">${id}</a>
-                        <a href="#" class="card-link">${email}</a>
-                        <a href="#" class="card-link">${officeNum}</a>
-                    </div>
-                </div>
-            </div>`
+            arr.push(object.getRender())
         }
         else if (object.getRole() == "Engineer")
         {
-            //     return `<div class="col-sm-4">
-            //     <div class="card p-3">
-            //         <div class="card-body">
-            //             <h5 class="card-title">${object.name}</h5>
-            //             <h6 class="card-subtitle mb-2 text-muted">${object.getRole()}</h6>
-            //             <a href="#" class="card-link">${object.id}</a>
-            //             <a href="#" class="card-link">${object.email}</a>
-            //             <a href="#" class="card-link">${object.gitHub}</a>
-            //         </div>
-            //     </div>
-            // </div>`
+            console.log(object.name);
+            arr.push(object.getRender())
         }
-
         else if (object.getRole() == "Intern")
         {
-            //     return `<div class="col-sm-4">
-            //     <div class="card p-3">
-            //         <div class="card-body">
-            //             <h5 class="card-title">${object.name}</h5>
-            //             <h6 class="card-subtitle mb-2 text-muted">${object.getRole()}</h6>
-            //             <a href="#" class="card-link">${object.id}</a>
-            //             <a href="#" class="card-link">${object.email}</a>
-            //             <a href="#" class="card-link">${object.school}</a>
-            //         </div>
-            //     </div>
-            // </div>`
+            console.log(object.name);
+            arr.push(object.getRender())
         }
     })
+    return arr;
 }
+
 
 function generateHTML(team)
 {
 
-    //console.log(team);
-    generateCard(team);
+    console.log(team);
     return `<!DOCTYPE html>
     <html lang="en">
     

@@ -32,6 +32,21 @@ class Manager extends Employee
     {
         return "Manager";
     }
+
+    getRender()
+    {
+        return `<div class="col-sm-4">
+                <div class="card p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">${this.getName()}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${this.getRole()}</h6>
+                        <a href="#" class="card-link">${this.getId()}</a>
+                        <a href="#" class="card-link">${this.getEmail()}</a>
+                        <a href="#" class="card-link">${this.getOfficeNum()}</a>
+                    </div>
+                </div>
+            </div>`
+    }
 }
 
 module.exports = Manager;
