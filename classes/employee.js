@@ -2,10 +2,10 @@ class Employee
 {
     constructor(name, id, email)
     {
-        if (typeof name !== "string" && typeof id !== "number" && typeof email !== "string")
+        if (typeof name !== "string" && typeof id !== "string" && typeof email !== "string")
         {
             throw new Error(
-                "Expected parameter parameters should not be empty"
+                "Expected parameters should not be empty"
             );
         }
         else
@@ -20,14 +20,14 @@ class Employee
                     "Expected parameter 'name' to be a non empty string"
                 );
             }
-            if (typeof id == 'number')
+            if (typeof id == 'string')
             {
                 this.id = id;
             }
             else
             {
                 throw new Error(
-                    "Expected parameter 'id' to be a non empty number"
+                    "Expected parameter 'id' to be a non empty string"
                 )
             }
             if (typeof email == "string")

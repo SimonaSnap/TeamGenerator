@@ -6,12 +6,12 @@ class Engineer extends Employee
     {
         super(name, id, email)
 
-        if (typeof name !== "string" && typeof id !== "number" && typeof email !== "string" && typeof gitHub !== "string")
+        if (typeof name !== "string" && typeof id !== "string" && typeof email !== "string" && typeof gitHub !== "string")
         {
         }
         else
         {
-            if (typeof name == "string" && typeof id == "number" && typeof email == "string" && typeof gitHub == 'string')
+            if (typeof name == "string" && typeof id == "string" && typeof email == "string" && typeof gitHub == 'string')
             {
                 this.gitHub = gitHub;
             }

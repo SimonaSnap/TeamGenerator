@@ -1,5 +1,67 @@
-function generateHTML(data)
+const Manager = require("./classes/manager");
+
+function generateCard(team)
 {
+    //console.log(team);
+    team.forEach((object) =>
+    {
+        if (object.getRole() == "Manager")
+        {
+            manName = object.name;
+            id = object.id;
+            email = object.id;
+            role = object.getRole();
+            officeNum = object.officeNum;
+
+            return `<div class="col-sm-4">
+                <div class="card p-3">
+                    <div class="card-body">
+                        <h5 class="card-title">${manName}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">${role}</h6>
+                        <a href="#" class="card-link">${id}</a>
+                        <a href="#" class="card-link">${email}</a>
+                        <a href="#" class="card-link">${officeNum}</a>
+                    </div>
+                </div>
+            </div>`
+        }
+        else if (object.getRole() == "Engineer")
+        {
+            //     return `<div class="col-sm-4">
+            //     <div class="card p-3">
+            //         <div class="card-body">
+            //             <h5 class="card-title">${object.name}</h5>
+            //             <h6 class="card-subtitle mb-2 text-muted">${object.getRole()}</h6>
+            //             <a href="#" class="card-link">${object.id}</a>
+            //             <a href="#" class="card-link">${object.email}</a>
+            //             <a href="#" class="card-link">${object.gitHub}</a>
+            //         </div>
+            //     </div>
+            // </div>`
+        }
+
+        else if (object.getRole() == "Intern")
+        {
+            //     return `<div class="col-sm-4">
+            //     <div class="card p-3">
+            //         <div class="card-body">
+            //             <h5 class="card-title">${object.name}</h5>
+            //             <h6 class="card-subtitle mb-2 text-muted">${object.getRole()}</h6>
+            //             <a href="#" class="card-link">${object.id}</a>
+            //             <a href="#" class="card-link">${object.email}</a>
+            //             <a href="#" class="card-link">${object.school}</a>
+            //         </div>
+            //     </div>
+            // </div>`
+        }
+    })
+}
+
+function generateHTML(team)
+{
+
+    //console.log(team);
+    generateCard(team);
     return `<!DOCTYPE html>
     <html lang="en">
     
@@ -18,65 +80,7 @@ function generateHTML(data)
         </header>
         <section class="container-fluid p-4" style="width: 100viewport">
             <div class="row gy-5 p-5" style="width: 100%;">
-                <div class="col-sm-4">
-                    <div class="card p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Name</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                            <a href="#" class="card-link">ID #</a>
-                            <a href="#" class="card-link">Email</a>
-                            <a href="#" class="card-link">OfficeNum/GitHub/School</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-sm-4">
-                    <div class="card p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Name</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                            <a href="#" class="card-link">ID #</a>
-                            <a href="#" class="card-link">Email</a>
-                            <a href="#" class="card-link">OfficeNum/GitHub/School</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-sm-4">
-                    <div class="card p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Name</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                            <a href="#" class="card-link">ID #</a>
-                            <a href="#" class="card-link">Email</a>
-                            <a href="#" class="card-link">OfficeNum/GitHub/School</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-sm-4">
-                    <div class="card p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Name</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                            <a href="#" class="card-link">ID #</a>
-                            <a href="#" class="card-link">Email</a>
-                            <a href="#" class="card-link">OfficeNum/GitHub/School</a>
-                        </div>
-                    </div>
-                </div>
-    
-                <div class="col-sm-4">
-                    <div class="card p-3">
-                        <div class="card-body">
-                            <h5 class="card-title">Name</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Position</h6>
-                            <a href="#" class="card-link">ID #</a>
-                            <a href="#" class="card-link">Email</a>
-                            <a href="#" class="card-link">OfficeNum/GitHub/School</a>
-                        </div>
-                    </div>
-                </div>
+            ${generateCard(team)}
             </div>
         </section>
     
@@ -85,4 +89,4 @@ function generateHTML(data)
     </html>`
 }
 
-module.exports = HTML;
+module.exports = generateHTML;

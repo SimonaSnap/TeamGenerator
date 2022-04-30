@@ -5,12 +5,12 @@ class Intern extends Employee
     constructor(name, id, email, school)
     {
         super(name, id, email)
-        if (typeof name !== "string" && typeof id !== "number" && typeof email !== "string" && typeof school !== "string")
+        if (typeof name !== "string" && typeof id !== "string" && typeof email !== "string" && typeof school !== "string")
         {
         }
         else
         {
-            if (typeof name == "string" && typeof id == "number" && typeof email == "string" && typeof school == 'string')
+            if (typeof name == "string" && typeof id == "string" && typeof email == "string" && typeof school == 'string')
             {
                 this.school = school;
             }
