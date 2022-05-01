@@ -36,17 +36,18 @@ class Engineer extends Employee
 
     getRender()
     {
-        return `<div class="col-sm-4">
-                <div class="card p-3">
-                    <div class="card-body">
-                        <h5 class="card-title">${this.getName()}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">${this.getRole()}</h6>
-                        <a href="#" class="card-link">${this.getId()}</a>
-                        <a href="#" class="card-link">${this.getEmail()}</a>
-                        <a href="#" class="card-link">${this.getGitHub()}</a>
-                    </div>
-                </div>
-            </div>`
+        return `<div class="col-sm-3">
+        <div class="card p-3">
+            <div class="card-body">
+                <h4 class="card-title">${this.getName()}</h4>
+                <img class="p-1" src="./Assets/engineer.png">
+                <h6 class="card-subtitle mb-2 text-muted">${this.getRole()}</h6>
+                <a href="#" class="card-link">${this.getId()}</a>
+                <a href=mailto:"${this.getEmail()}" target="_blank" class="card-link">${this.getEmail()}</a>
+                <a href="https://github.com/${this.getGitHub()}" target="_blank" class="card-link">${this.getGitHub()}</a>
+            </div>
+        </div>
+    </div>`
     }
 }
 

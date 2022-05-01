@@ -12,12 +12,12 @@ function generateCard(team)
         }
         else if (object.getRole() == "Engineer")
         {
-            console.log(object.name);
+            //console.log(object.name);
             arr.push(object.getRender())
         }
         else if (object.getRole() == "Intern")
         {
-            console.log(object.name);
+            //console.log(object.name);
             arr.push(object.getRender())
         }
     })
@@ -28,7 +28,7 @@ function generateCard(team)
 function generateHTML(team)
 {
 
-    console.log(team);
+    //console.log(team);
     return `<!DOCTYPE html>
     <html lang="en">
     

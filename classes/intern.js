@@ -35,13 +35,14 @@ class Intern extends Employee
 
     getRender()
     {
-        return `<div class="col-sm-4">
+        return `<div class="col-sm-3">
                 <div class="card p-3">
                     <div class="card-body">
-                        <h5 class="card-title">${this.getName()}</h5>
+                        <h4 class="card-title">${this.getName()}</h4>
+                        <img class="p-1" src="./Assets/intern.png">
                         <h6 class="card-subtitle mb-2 text-muted">${this.getRole()}</h6>
                         <a href="#" class="card-link">${this.getId()}</a>
-                        <a href="#" class="card-link">${this.getEmail()}</a>
+                        <a href=mailto:"${this.getEmail()}" target="_blank" class="card-link">${this.getEmail()}</a>
                         <a href="#" class="card-link">${this.getSchool()}</a>
                     </div>
                 </div>
