@@ -1,10 +1,13 @@
 const Employee = require("./employee");
-
+//the class takes the employee class
 class Manager extends Employee
 {
     constructor(name, id, email, officeNum)
     {
+        //super is where i am stating that the name, id, and email parameters wil be handled by the employee class
         super(name, id, email)
+
+        //the different if and else statements are checking to make sure that the inputs taken are non empty strings
         if (typeof name !== "string" && typeof id !== "string" && typeof email !== "string" && typeof officeNum !== "string")
         {
         }
@@ -28,11 +31,15 @@ class Manager extends Employee
         return this.officeNum;
     }
 
+    //i use this function to check the instances being created in the index.js file/called in the forEach
+    //function to check which render should be called
     getRole()
     {
         return "Manager";
     }
 
+    //this sets up how i want the card of information to look like and were to insert the instance specific information
+    //this is then inserted in the generateHTML function to set up the written html file
     getRender()
     {
         return `<div class="col-sm-3">

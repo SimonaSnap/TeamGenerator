@@ -1,9 +1,13 @@
 const Employee = require("../classes/employee");
 
+//describe what i am testing
+//i follow the same format for all the subclasses as well
 describe("Employee", () =>
 {
+    //describe what part of the employee i am testing
     describe("Initialization", () =>
     {
+        //testing what part of initilization = checking to see what a successful instance shall produce
         it("should create an object with a name, id, email, and role with valid parameters", () =>
         {
             const employee = new Employee("Mark", "1", "mark@gmail.com");
@@ -13,6 +17,7 @@ describe("Employee", () =>
             expect(employee.email).toEqual("mark@gmail.com");
         });
 
+        //testing to make sure that the function specific to this class also works
         it("get Role method should equal 'Employee'", () =>
         {
             const employee = new Employee("Mark", "1", "mark@gmail.com");
@@ -22,6 +27,8 @@ describe("Employee", () =>
         })
     })
 
+    //a series of tests making sure that if given either no parameters, or a wrong value an error shall be given
+    //in addition the errors are the correct errors
     describe("Employee parameter check", () =>
     {
 

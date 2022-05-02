@@ -1,5 +1,7 @@
-const Manager = require("./classes/manager");
-
+//this generateCard function states that for every object i have stored in the team array
+//i should launch the different .getRender funcntions i have for the different roles
+//and insert the object information in those getRender where needed
+//then take that and save it to arr
 function generateCard(team)
 {
     const arr = []
@@ -24,7 +26,8 @@ function generateCard(team)
     return arr;
 }
 
-
+//this is the parent function of generateCard, where it will make the rest of the html
+//in addition add the different cards depending on the arr that i create in the generatecard function
 function generateHTML(team)
 {
 

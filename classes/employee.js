@@ -1,7 +1,9 @@
+//the parent class that the subclasses with inherit from
 class Employee
 {
     constructor(name, id, email)
     {
+        //this checks to make sure that the parameters are non empty strings
         if (typeof name !== "string" && typeof id !== "string" && typeof email !== "string")
         {
             throw new Error(
@@ -44,6 +46,7 @@ class Employee
     }
 
 
+    //this states that if the name, id, or email called, those values shall be returned
     getName()
     {
         return this.name;

@@ -1,3 +1,4 @@
+//requiring all of the subclasses, inquirer, and the generate function so that I can reference them here
 const Manager = require("./classes/manager");
 const Engineer = require("./classes/engineer");
 const Intern = require("./classes/intern")
@@ -5,7 +6,8 @@ const inquirer = require("inquirer")
 const fs = require("fs");
 const generateHTML = require("./generateHTML");
 
-
+//a series of input set ups for each type of employee to then ask in the inquirer prompts
+//manager set up
 const questionsManager = [
     "What is the manager's name? ",
     "What is the manager's employee id? ",
@@ -19,6 +21,7 @@ const namesManager = [
     "officeNum"
 ];
 
+//engineer set up
 const questionsEngineer = [
     "What is the engineer's name? ",
     "What is the engineer's employee id? ",
@@ -33,6 +36,7 @@ const namesEngineer = [
     "gitHub"
 ];
 
+//intern set up
 const questionsIntern = [
     "What is the intern's name? ",
     "What is the intern's employee id? ",
@@ -46,6 +50,7 @@ const namesIntern = [
     "school"
 ];
 
+//creating for loops that takes the array values and creates the seperate prompt set ups to then use
 const managerQArr = [];
 for (let i = 0; i < questionsManager.length; i++)
 {
@@ -82,6 +87,7 @@ for (let i = 0; i < questionsIntern.length; i++)
     )
 }
 
+//this creates the menu to ask to add more employees or not
 const menu = [{
     type: "list",
     message: "Who else would you like to add to your team? ",
@@ -89,7 +95,10 @@ const menu = [{
     name: "menu",
 }];
 
+//the team array adds each employee we create when running the program, to then write the html file with everyone's information
 const team = [];
+
+//the start function starts the program by asking the manager questions because we only have one manager, then calls init to call the menu and create the rest of the team
 function start()
 {
     inquirer
@@ -103,6 +112,8 @@ function start()
         })
 }
 
+//the function that contains the rest of the team and menu
+//this function also has the write file code - which will actually generate the html using the generateHtml function on the generateHTML.js file
 function init()
 {
     inquirer

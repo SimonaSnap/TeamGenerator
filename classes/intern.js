@@ -1,9 +1,11 @@
 const Employee = require("./employee");
+//the class takes the employee class
 
 class Intern extends Employee
 {
     constructor(name, id, email, school)
     {
+        //the different if and else statements are checking to make sure that the inputs taken are non empty strings
         super(name, id, email)
         if (typeof name !== "string" && typeof id !== "string" && typeof email !== "string" && typeof school !== "string")
         {
@@ -28,11 +30,16 @@ class Intern extends Employee
         return this.school;
     }
 
+    //i use this function to check the instances being created in the index.js file/called in the forEach
+    //function to check which render should be called
     getRole()
     {
         return "Intern";
     }
 
+
+    //this sets up how i want the card of information to look like and were to insert the instance specific information
+    //this is then inserted in the generateHTML function to set up the written html file
     getRender()
     {
         return `<div class="col-sm-3">
